@@ -1,15 +1,9 @@
 
 body, html {
-    /* height: 100%; */
     font-family: 'lato', sans-serif;
     font-size: 22px;
     background-color: rgb(252, 252, 252);
 }
-/* .hero {
-    height: 1000px
-    background-color: rgb(241, 92, 92);
-
-} */
 .hero-image {
     background-image: linear-gradient(rgba(7, 7, 7, 0.274), rgba(12, 12, 12, 0.432)), url("../img/placeimg_1000_480_nature.jpg");
     height: 600px;
@@ -17,7 +11,6 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    /* margin-top: -500px; */
 }
 .hero-text {
     text-align: center;
@@ -33,39 +26,35 @@ body, html {
         background: linear-gradient(rgba(7, 7, 7, 0.06), rgba(10, 10, 10, 0.5), rgba(7, 7, 7, 0.06));
         padding: 15px;
     }
+    h2 { 
+        text-align: center;        
+        margin: 100px 0 20px 0;
+        color: rgb(1, 63, 1);
+        font-size: 48px;
+    }
     h3 {
         font-weight: 580;
     }
-    nav.home {
+    nav {
         display: flex;
         justify-content: center;
         gap: 20px;
-        flex-wrap: wrap;
-        position: sticky;
-        top: 0px;
-        font-size: 20px;
-        z-index: 11;
-        margin-top: -70px;
-        background: linear-gradient(rgba(7, 7, 7, 0.06), rgba(10, 10, 10, 0.164), rgba(7, 7, 7, 0.06));
-    }
-    nav.rest {
-        display: flex;
-        justify-content: center;
         flex-flow: row wrap;
         position: sticky;
         top: 0px;
-        gap: 20px;
         font-size: 20px;
-        z-index: 11;
+        z-index: 2;
         background: linear-gradient(rgba(7, 7, 7, 0.06), rgba(10, 10, 10, 0.164), rgba(7, 7, 7, 0.06));
     }
-    nav.rest > div {
+    nav.home {
+        margin-top: -70px;
+    }
+    nav > div {
         display: flex;
-        flex-flow: row nowrap;
         justify-content: center;
         gap: 20px;
     }
-    nav > a, section > a, div > a {
+    section > a, div > a {
         color: rgb(143, 155, 146);
         text-decoration: none;
         padding: 1em 0.9em;
@@ -76,21 +65,10 @@ body, html {
         background: linear-gradient(rgba(7, 7, 7, 0.06), rgba(10, 10, 10, 0.16), rgba(7, 7, 7, 0.06));
         color: green;
     }
-    nav > a:hover, div > a:hover {
+    div > a:hover {
         border-bottom: 5px solid green;
         background: linear-gradient(rgba(7, 7, 7, 0.26), rgba(10, 10, 10, 0.57), rgba(7, 7, 7, 0.26));
         color: rgb(4, 219, 4);
-    }
-    h2 {
-        position:relative;
-        text-align: center;
-        left: 50%;
-        right: 50%;
-        transform: translate(-50%, -50%);
-        margin: 100px 0 -30px 0;
-        color: rgb(1, 63, 1);
-        font-size: 48px;
-        
     }
     main.home {
         display: flex;
@@ -118,6 +96,30 @@ body, html {
         margin: 5px;
         font-size: 34px;
     }
+    main.rest {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        border: ridge 6px rgba(0, 128, 0, 0.356);
+        width: 80%;
+        max-width: 1000px;
+        padding: 10px;
+        margin: 30px auto;
+        background-color: linen;
+    } 
+    main.rest > h1, main.rest > p, section > img, .main-img {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.651);
+        padding: 10px;
+        margin: 10px;
+        background: linear-gradient(rgba(0, 128, 0, 0.1), rgba(0, 128, 0, 0.17), rgba(0, 128, 0, 0.1));        
+    }
+    p {
+        width: 80%;
+    }
+    .main-img {
+        width: 80%;
+        max-width: 400px;
+    }
     footer {
         background: linear-gradient(rgba(7, 7, 7, 0.06), rgba(10, 10, 10, 0.164), rgba(7, 7, 7, 0.06))
     }
@@ -126,76 +128,36 @@ body, html {
         font-size: 24px;
         color: rgba(0, 0, 0, 0.616);
     }
-    p {
-        width: 80%;
+    @media only screen and (min-width: 1208px) {
+        nav, nav > div {
+            gap: 40px;
+        }
     }
-        main.rest {
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        border: ridge 6px rgba(0, 128, 0, 0.356);
-        width: 80%;
-        max-width: 1000px;
-        padding: 10px;
-        margin: 20px;
-        position: relative;
-        left: 50%;
-        transform: translate(-50%);
-        background-color: linen;
-    } 
-    main.rest > h1, main.rest > p, section > img, .main-img {
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.651);
-        padding: 10px;
-        margin: 10px;
-        background: linear-gradient(rgba(0, 128, 0, 0.1), rgba(0, 128, 0, 0.17), rgba(0, 128, 0, 0.1))
-        
-    }
-    .main-img {
-        width: 80%;
-        max-width: 400px;
-    }
-
-@media only screen and (min-width: 1208px) {
-    nav.home {
-        gap: 40px;
+    @media only screen and (max-width: 866px) {
+        nav, nav > div {
+            gap: 10px;
+        }
+}
+@media only screen and (max-width: 780px) {
+    nav, nav > div {
+        gap: 2px;
     }
 }
-@media only screen and (max-width: 929px) {
-    nav.home {
-        gap: 10px;
-    }
-}
-@media only screen and (max-width: 772px) {
-    nav.home {
-        margin-top: -150px;
-        
-    }
-}
-@media only screen and (max-width: 394px) {
+@media only screen and (max-width: 733px) {
     nav.home {
         margin-top: -140px;
-        gap: 0px;
     }
 }
-@media only screen and (max-width: 374px) {
-    nav.home {
-        margin-top: -210px;
-        
-    }
-}
-@media only screen and (min-width: 1100px) {
-    nav.rest > div {
-        gap: 40px;
-        
-    }
-}
-
-@media only screen and (max-width: 554px) {
-    nav.rest > div {
+@media only screen and (max-width: 700px) {
+    nav, nav > div {
         flex-wrap: wrap;
-
-        
     }
 }
+@media only screen and (max-width: 499px) {
+    nav.home {
+        margin-top: -212px;
+    }
+}
+
+
 
